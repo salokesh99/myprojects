@@ -1,0 +1,12 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.main, name='main'),
+    path('test/', views.test, name='test' ),
+    path('helloworld/', views.helloWorld, name='helloworld'),
+    path('members/', views.members, name ='members'),
+    path('members/details/<int:id>', views.details, name='member_details')
+]
+
+#superuser username - lokesh pass - 12345

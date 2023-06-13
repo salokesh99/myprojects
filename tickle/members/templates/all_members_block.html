@@ -1,0 +1,39 @@
+{% extends "master_template.html" %}
+
+{% block title %}
+My First project club 
+{% endblock %}
+
+{% comment %}
+{% block content %}
+<p><a href="/">Home</a> > </p>
+<h1>Members Of the Club</h1>
+<ul>
+    {% for member in mymembers %}
+    <li><a href='/members/details/{{member.id}}'>{{ member.first_name}} {{member.last_name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+{% endcomment %}
+
+{% block content %}
+<p><a href="/">Home</a> > </p>
+<h1>Members Of the Club</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>first_name</th>
+        <th>last_name</th>
+    </tr>
+    <tr>
+        {% for member in members %}
+        <td>member.id</td>
+        <td>member.first_name</td>
+        <td>member.last_name</td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}
+
+

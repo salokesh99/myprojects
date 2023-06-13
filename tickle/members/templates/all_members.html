@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Members</h1>
+  
+<ul>
+    {% for member in mymembers %}
+    <li><a href='/members/details/{{member.id}}'>{{ member.first_name}} {{member.last_name}}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
