@@ -1,2 +1,6 @@
 env
-tickle/__pycache__
+__pycache__
+tickle/members/__pycache__/
+tickle/members/__pycache__/__init__.cpython-38.pyc
+*.pyc
+tickle/members/__pycache__/__init__.cpython-38.pyc
