@@ -2,10 +2,11 @@
 
 {% block title %}
 
-Member Details {{member.first_name}}
+Member Details - {{member.first_name}}
 
 {% endblock %}
 
+{% comment %}
 {% block content %}
 <p><a href="/">Home</a> > <a href="/members">members</a> > details </p>
 
@@ -14,4 +15,12 @@ Member Details {{member.first_name}}
 <h2>Joining Date - {{member.join_date}}</h2>
 
 {% endblock %}
+{% endcomment %}
 
+{% block content %}
+  <div class="mycard">
+    <h1>Full Name :  {{ member.first_name }} {{ member.last_name }}</h1>
+    <p>Phone : {{ member.phone }}</p>
+    <p>Member since: {{ member.join_date }}</p>
+  </div>
+{% endblock %}  

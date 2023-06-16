@@ -14,7 +14,6 @@ My First project club
     {% endfor %}
 </ul>
 {% endblock %}
-{% endcomment %}
 
 {% block content %}
 <p><a href="/">Home</a> > </p>
@@ -26,14 +25,29 @@ My First project club
         <th>first_name</th>
         <th>last_name</th>
     </tr>
+    {% for member in mymembers %}
     <tr>
-        {% for member in members %}
-        <td>member.id</td>
-        <td>member.first_name</td>
-        <td>member.last_name</td>
+        <td>{{member.id}}</td>
+        <td><a href='/members/details/{{member.id}}'>{{member.first_name}}</a></td>
+        <td>{{member.last_name}}</td>
+        {% empty %}
+        <p>No Members</p>
         {% endfor %}
     </tr>
 </table>
 {% endblock %}
+{% endcomment %}
 
 
+{% block content %}
+
+<div class="mycard">
+    <h1>Members</h1>
+    <ul>
+        {% for member in mymembers %}
+        <li onclick="window.location = 'details/{{member.id}}'">{{member.first_name}} {{member.last_name}} </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
